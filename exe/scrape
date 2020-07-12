@@ -1,0 +1,79 @@
+#!/usr/bin/env ruby
+
+# frozen_string_literal: true
+
+require 'optparse'
+require 'fileutils'
+require 'image_scraper'
+require 'open-uri'
+
+options = {}
+optparse = OptionParser.new do |opts|
+  opts.banner = 'Usage: image_scraper [options] url1 url2'
+
+  opts.on('-h', '--help', 'display this screen') do
+    puts opts
+    exit
+  end
+
+  options[:all] = false
+
+  opts.on('-a', '--all', 'list all images') do
+    options[:all] = true
+  end
+
+  options[:css] = false
+
+  opts.on('-c', '--[no-]css', TrueClass, 'include css images') do |v|
+    options[:css] = v.nil? ? false : v
+  end
+
+  options[:list] = true
+
+  opts.on('-l', '--[no-]list', TrueClass, 'list assets') do |v|
+    options[:list] = v.nil? ? true : v
+  end
+
+  opts.on('-s', '--[no-]save', TrueClass, 'save assets') do |v|
+    options[:save] = v.nil? ? false : v
+  end
+
+  options[:verbose] = false
+
+  opts.on('-v', '--verbose', TrueClass, 'output more info') do |v|
+    options[:verbose] = v.nil? ? false : v
+  end
+end
+
+optparse.parse!
+
+
+def msg(text, option_guard = true)
+  return unless option_guard
+
+  puts text
+end
+
+save_css = [options[:all], options[:css]].any?
+show_list = [options[:list], options[:verbose]].any?
+
+ARGV.each do |url|
+  msg "fetching assets for #{url}...", options[:verbose]
+
+  client = ImageScraper::Client.new(url, include_css_images: save_css)
+
+  client.image_urls.sort.each do |image_url|
+    msg(image_url, show_list)
+
+    next unless options[:save]
+
+    msg("SAVING #{image_url}...", options[:verbose])
+
+    uri = URI.parse(image_url)
+    filename = File.basename(uri.path)
+
+    open(image_url) do |outf|
+      File.open(filename, 'wb') { |inf| inf.puts(outf.read) }
+    end
+  end
+end

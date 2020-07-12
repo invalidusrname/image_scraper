@@ -24,7 +24,7 @@ module ImageScraper
       if url.is_a?(URI::HTTP)
         url
       else
-        url = url.strip
+        url = url.to_s.strip
         url = "http://#{url}" unless url.include?('://')
         url = url.gsub(' ', '%20') if url.include?(' ')
 

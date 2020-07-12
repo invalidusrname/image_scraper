@@ -59,7 +59,8 @@ module ImageScraper
     def image_urls
       images = page_images
       images += stylesheet_images if include_css_images
-      images
+
+      images.compact.uniq
     end
 
     def cleanup_src_value(text)
@@ -82,7 +83,7 @@ module ImageScraper
         else
           src
         end
-      end.compact
+      end.compact.uniq
     end
 
     def fetch_css(url)
