@@ -12,4 +12,4 @@ require 'nokogiri'
 require 'image_scraper/railtie'
 require 'image_scraper/util'
 require 'image_scraper/client'
-require "image_scraper/version"
+require 'image_scraper/version'
