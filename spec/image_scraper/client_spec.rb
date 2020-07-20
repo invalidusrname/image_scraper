@@ -38,7 +38,6 @@ describe ImageScraper::Client, :vcr do
       images = [
         'http://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/SIPI_Jelly_Beans_4.1.07.tiff/lossy-page1-220px-SIPI_Jelly_Beans_4.1.07.tiff.jpg',
         'http://upload.wikimedia.org/wikipedia/en/thumb/5/5c/Symbol_template_class.svg/16px-Symbol_template_class.svg.png',
-        'http://upload.wikimedia.org/wikipedia/en/thumb/5/5c/Symbol_template_class.svg/16px-Symbol_template_class.svg.png',
         'http://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1',
         'http://en.wikipedia.org/static/images/wikimedia-button.png',
         'http://en.wikipedia.org/static/images/poweredby_mediawiki_88x31.png'
@@ -72,7 +71,6 @@ describe ImageScraper::Client, :vcr do
 
       images = [
         '//upload.wikimedia.org/wikipedia/commons/thumb/b/b6/SIPI_Jelly_Beans_4.1.07.tiff/lossy-page1-220px-SIPI_Jelly_Beans_4.1.07.tiff.jpg',
-        '//upload.wikimedia.org/wikipedia/en/thumb/5/5c/Symbol_template_class.svg/16px-Symbol_template_class.svg.png',
         '//upload.wikimedia.org/wikipedia/en/thumb/5/5c/Symbol_template_class.svg/16px-Symbol_template_class.svg.png',
         '//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1',
         '/static/images/wikimedia-button.png',
