@@ -9,7 +9,7 @@ require 'open-uri'
 
 options = {}
 optparse = OptionParser.new do |opts|
-  opts.banner = 'Usage: image_scraper [options] url1 url2'
+  opts.banner = 'Usage: image_scraper [options] url1 url2...'
 
   opts.on('-h', '--help', 'display this screen') do
     puts opts
@@ -47,7 +47,6 @@ end
 
 optparse.parse!
 
-
 def msg(text, option_guard = true)
   return unless option_guard
 
@@ -57,7 +56,14 @@ end
 save_css = [options[:all], options[:css]].any?
 show_list = [options[:list], options[:verbose]].any?
 
-ARGV.each do |url|
+if ARGV.empty?
+  puts optparse.help
+  exit 1
+end
+
+urls = ARGV.collect { |url| url }
+
+urls.each do |url|
   msg "fetching assets for #{url}...", options[:verbose]
 
   client = ImageScraper::Client.new(url, include_css_images: save_css)
