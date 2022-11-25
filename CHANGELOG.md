@@ -1,5 +1,17 @@
 ## [Unreleased]
 
+## [0.2.0](https://github.com/invalidusrname/image_scraper/compare/v0.1.10...v0.2.0) (2022-11-25)
+
+
+### Features
+
+* should be real minor ([5f147da](https://github.com/invalidusrname/image_scraper/commit/5f147daaec1a800c9860254859959750be121333))
+
+
+### Bug Fixes
+
+* should be minor ([26f8f3c](https://github.com/invalidusrname/image_scraper/commit/26f8f3ca38be32e0b7752cb4f3ed22b8cc3d86fd))
+
 ## [0.1.10](https://github.com/invalidusrname/image_scraper/compare/v0.1.13...v0.1.10) (2022-11-25)
 
 
