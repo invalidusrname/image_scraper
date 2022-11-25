@@ -2,6 +2,7 @@
   "packages": {
     ".": {
       "changelog-path": "CHANGELOG.md",
+      "commit-search-depth": 10,
       "release-type": "ruby",
       "bump-minor-pre-major": false,
       "bump-patch-for-minor-pre-major": false,
