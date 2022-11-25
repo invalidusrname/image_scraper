@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.2.2](https://github.com/invalidusrname/image_scraper/compare/v0.2.1...v0.2.2) (2022-11-25)
+
+
+### Bug Fixes
+
+* remove release-please-config.json ([6856965](https://github.com/invalidusrname/image_scraper/commit/68569657c4279df75b21f880234552b3ad36dbce))
+
 ## [0.2.1](https://github.com/invalidusrname/image_scraper/compare/v0.2.0...v0.2.1) (2022-11-25)
 
 
