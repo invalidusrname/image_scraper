@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.2.1](https://github.com/invalidusrname/image_scraper/compare/v0.2.0...v0.2.1) (2022-11-25)
+
+
+### Bug Fixes
+
+* should be patch 2.1 ([8cacc39](https://github.com/invalidusrname/image_scraper/commit/8cacc395ba34c78975712fde30da2d907f890211))
+
 ## [0.2.0](https://github.com/invalidusrname/image_scraper/compare/v0.1.10...v0.2.0) (2022-11-25)
 
 
